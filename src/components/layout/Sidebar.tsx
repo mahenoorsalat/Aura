@@ -84,8 +84,8 @@ export function Sidebar() {
     <nav className="flex items-center justify-between px-8 py-4 max-w-[1440px] mx-auto w-full">
       {/* Brand area */}
       <Link to="/" className="flex items-center gap-3 group">
-        <div className="w-10 h-10 border border-black/5 rounded-2xl flex items-center justify-center bg-white shadow-sm ring-1 ring-black/5 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-          <Zap className="w-5 h-5 text-primary fill-primary" />
+        <div className="w-10 h-10 border border-black/5 rounded-2xl flex items-center justify-center bg-white shadow-sm ring-1 ring-black/5 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 overflow-hidden p-1.5">
+          <img src="/logo.svg" alt="Aura Logo" className="w-full h-full object-contain" />
         </div>
         <div className="flex flex-col">
           <span className="text-lg font-black tracking-tighter leading-none">Aura</span>

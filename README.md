@@ -1,73 +1,53 @@
-# Welcome to your Lovable project
+# Aura 5.0 | The Self-Sovereign Student OS
 
-## Project info
+Aura is a high-fidelity, comprehensive operating environment designed for student resilience and cognitive optimization. Built for the **Build4Students Hackathon**, Aura addresses the fractured nature of student life—merging schoolwork, peer synergy, and mental wellness into a single, cohesive terminal.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🪐 The Problem & Solution
 
-## How can I edit this code?
+**The Problem**: Students today suffer from "Context Fragmentation." School assignments are in one app, wellness habits in another, peer communication in a third, and nutrition tracking in a fourth. This leads to cognitive load and metabolic burnout.
 
-There are several ways of editing your application.
+**The Solution**: Aura is a **Unified Student Resonance Stack**. It doesn't just track data; it synthesizes it. By merging research (Scholar), social connection (Village), and physiological habits (Balance) into a premium, minimalist environment, Aura reduces context switching and empowers students to focus on their destiny.
 
-**Use Lovable**
+## 🚀 Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Scholar Lab**: Integrated AI research synthesis terminal with persistent vector mapping.
+- **Village Synergy**: High-fidelity peer discovery engine centered on student-to-student collaboration.
+- **Resilience Engine**: Atmospheric synchronized breathwork and systematic habit architecture.
+- **Metabolic Analytics**: Weekly budgetary thresholds and nutritional synthesis planners.
+- **Nexus Core**: A zero-config, "Self-Sovereign" architecture that persists data locally—protecting student privacy while ensuring seamless portability.
 
-Changes made via Lovable will be committed automatically to this repo.
+## 💎 Design Philosophy (Aura 5.0)
 
-**Use your preferred IDE**
+Aura follows a **High-Fidelity Minimalist** aesthetic. We avoid the "toy-like" designs common in education software. Instead, we use a warm ivory-and-charcoal palette, fluid physics-based animations (`framer-motion`), and rigorous typography to treat the student experience with the professional respect it deserves.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🛠 Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Interface**: React 18 + Vite + TypeScript
+- **Styling**: Tailwind CSS + Custom Aura Glassmorphism System
+- **Animation**: Framer Motion (Physics Transitions)
+- **Architecture**: Service-Oriented "Edge" Persistence (LocalStorage Kernel)
+- **UI Components**: Radix UI + Shadcn + Lucide Icons
 
-Follow these steps:
+## 🏃 Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Aura is designed with **Zero-Config Portability**. You don't need a database server or complex infrastructure.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. **Clone the Repo**
+   ```bash
+   git clone https://github.com/mahenoorsalat/Aura.git
+   cd Aura
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. **Install & Launch**
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+3. **Production Build**
+   ```bash
+   npm run build
+   ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+*Designed for Student Resilience. Built by Students, for Students.*
