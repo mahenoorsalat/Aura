@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aura 5.0 - The "100%" Hackathon Final Edit */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 45 40% 98%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 10% 3.9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 45 100% 65%;
+    --secondary-foreground: 240 10% 3.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 45 100% 65%;
+
+    --radius: 1.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-secondary selection:text-primary transition-colors duration-200;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.015em;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: radial-gradient(circle at top right, #fff9e6, #f9f7f0);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar for 100% polish */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/10 rounded-full;
+  }
+}
+
+@layer components {
+  .aura-slab {
+    @apply bg-white border border-black/[0.03] rounded-[var(--radius)] transition-all duration-500;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .aura-slab:hover {
+    @apply -translate-y-1 border-black/[0.08];
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+  }
+
+  .nav-header {
+    @apply flex items-center gap-1 p-1 bg-white/70 backdrop-blur-2xl border border-black/5 rounded-full;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  }
+
+  .nav-pill {
+    @apply px-6 py-2.5 rounded-full text-[13px] font-black uppercase tracking-widest transition-all text-muted-foreground/60 hover:text-primary hover:bg-black/5;
+  }
+
+  .nav-pill-active {
+    @apply bg-primary text-white shadow-lg shadow-black/20;
+  }
+
+  /* Status Indicator */
+  .status-dot {
+    @apply w-2 h-2 rounded-full relative;
+  }
+
+  .status-dot::after {
+    content: '';
+    @apply absolute inset-0 rounded-full animate-ping opacity-40;
+    background-color: inherit;
+  }
+
+  /* Section Header Styling */
+  .section-label {
+    @apply text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground/40 mb-3 block;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-blur {
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .rainbow-hover:hover {
+    background: linear-gradient(to right, #7c3aed, #ff2975, #f0b12e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
