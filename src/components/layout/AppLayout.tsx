@@ -29,8 +29,8 @@ export function AppLayout({ children }: AppLayoutProps) {
 
       {/* Modern Footer */}
       <footer className="border-t border-black/[0.05] py-12 bg-white/30 backdrop-blur-sm">
-        <div className="max-w-[1440px] mx-auto px-12 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col gap-2">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+          <div className="flex flex-col gap-2 items-center md:items-start">
             <div className="flex items-center gap-2">
               <div className="w-5 h-5 rounded bg-primary" />
               <span className="font-black text-xs uppercase tracking-widest">Aura OS</span>
@@ -40,10 +40,10 @@ export function AppLayout({ children }: AppLayoutProps) {
             </p>
           </div>
 
-          <div className="flex items-center gap-12 text-[10px] font-black uppercase tracking-widest text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Stack</a>
-            <a href="#" className="hover:text-primary transition-colors">Neural Documentation</a>
-            <a href="#" className="hover:text-primary transition-colors">System Status</a>
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+            <a href="#" className="hover:text-primary transition-colors whitespace-nowrap">Privacy Stack</a>
+            <a href="#" className="hover:text-primary transition-colors whitespace-nowrap">Neural Documentation</a>
+            <a href="#" className="hover:text-primary transition-colors whitespace-nowrap">System Status</a>
           </div>
 
           <div className="text-right">

@@ -127,7 +127,7 @@ const Dashboard = () => {
               <div
                 key={i}
                 onClick={() => navigate(stat.path)}
-                className="bg-white rounded-[1.5rem] p-6 shadow-sm border border-black/5 hover:shadow-md transition-all group cursor-pointer"
+                className="bg-white rounded-[1.5rem] p-4 md:p-6 shadow-sm border border-black/5 hover:shadow-md transition-all group cursor-pointer"
               >
                 <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/60 mb-8">{stat.label}</p>
                 <div className="flex items-end justify-between">
@@ -146,14 +146,14 @@ const Dashboard = () => {
           <div className="md:col-span-8 space-y-8">
             <AuraCard span="full" className="p-0 overflow-hidden border-none shadow-2xl relative group">
               <div className="grid lg:grid-cols-2 h-full">
-                <div className="bg-primary p-12 text-white flex flex-col justify-between">
+                <div className="bg-primary p-6 md:p-12 text-white flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-black/[0.03]">
                   <div>
                     <div className="flex items-center gap-3 mb-10">
                       <Brain className="w-6 h-6 text-amber-400" />
                       <span className="text-xs font-black uppercase tracking-[0.2em] opacity-40">Intelligence Node</span>
                     </div>
-                    <h3 className="text-5xl font-black tracking-tighter mb-6 leading-none">Scholar AI Synthesis.</h3>
-                    <p className="text-white/40 text-lg font-medium leading-relaxed mb-12">
+                    <h3 className="text-5xl font-black tracking-tighter mb-6 leading-none text-balance">Scholar AI Synthesis.</h3>
+                    <p className="text-white/40 text-lg font-medium leading-relaxed mb-12 text-balance">
                       Omni-directional processing engaged on <span className="text-white italic">"Neural Architectures v4"</span>. 8 key insights discovered in the 2h window.
                     </p>
                   </div>
@@ -165,7 +165,7 @@ const Dashboard = () => {
                     <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                   </button>
                 </div>
-                <div className="bg-slate-50 p-12 flex flex-col gap-6 relative overflow-hidden">
+                <div className="bg-slate-50 p-6 md:p-12 flex flex-col gap-6 relative overflow-hidden">
                   <span className="section-label">Real-time Stream</span>
                   <div className="space-y-3">
                     {["Processing weights...", "Mapping citations...", "Generating abstract...", "Optimizing context..."].map((line, i) => (
@@ -194,7 +194,7 @@ const Dashboard = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <AuraCard
                 onClick={() => navigate('/village')}
-                span="full" className="p-8 hover:bg-slate-50/50 cursor-pointer"
+                span="full" className="p-6 md:p-8 hover:bg-slate-50/50 cursor-pointer"
               >
                 <div className="flex items-center gap-4 mb-12">
                   <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-black/5 flex items-center justify-center text-primary">
@@ -212,7 +212,7 @@ const Dashboard = () => {
 
               <AuraCard
                 onClick={() => navigate('/nourish')}
-                span="full" className="p-8 hover:bg-slate-50/50 cursor-pointer"
+                span="full" className="p-6 md:p-8 hover:bg-slate-50/50 cursor-pointer"
               >
                 <div className="flex items-center gap-4 mb-12">
                   <div className="w-12 h-12 rounded-2xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-600">
@@ -230,7 +230,7 @@ const Dashboard = () => {
 
               <AuraCard
                 onClick={() => navigate('/balance')}
-                span="full" className="p-8 hover:bg-slate-50/50 col-span-1 lg:col-span-1 border-secondary/20 bg-secondary/[0.02] cursor-pointer"
+                span="full" className="p-6 md:p-8 hover:bg-slate-50/50 col-span-1 lg:col-span-1 border-secondary/20 bg-secondary/[0.02] cursor-pointer"
               >
                 <div className="flex items-center gap-4 mb-12">
                   <div className="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center">
@@ -250,7 +250,7 @@ const Dashboard = () => {
 
           {/* Right Rail Polished Sidebar */}
           <div className="md:col-span-4 space-y-8">
-            <AuraCard span="full" className="p-10 flex flex-col justify-between h-[500px] border-none shadow-2xl relative overflow-hidden group">
+            <AuraCard span="full" className="p-6 md:p-10 flex flex-col justify-between h-[500px] border-none shadow-2xl relative overflow-hidden group">
               <div className="relative z-10">
                 <div className="flex justify-between items-center mb-10">
                   <span className="section-label mb-0 leading-none">Concentration Engine</span>

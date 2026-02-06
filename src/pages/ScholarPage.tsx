@@ -103,7 +103,7 @@ export default function ScholarPage() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Knowledge Rail */}
           <div className="lg:col-span-4 space-y-8">
-            <AuraCard span="full" className="p-12 border-dashed border-2 bg-slate-50/50 flex flex-col items-center justify-center gap-6 group cursor-pointer hover:bg-white transition-all shadow-none hover:shadow-2xl">
+            <AuraCard span="full" className="p-6 md:p-12 border-dashed border-2 bg-slate-50/50 flex flex-col items-center justify-center gap-6 group cursor-pointer hover:bg-white transition-all shadow-none hover:shadow-2xl">
               <div className="w-16 h-16 rounded-3xl bg-primary text-white shadow-xl shadow-black/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                 <Upload className="w-7 h-7" />
               </div>
@@ -146,8 +146,8 @@ export default function ScholarPage() {
           <div className="lg:col-span-8">
             <AuraCard span="full" className="h-[500px] lg:h-[800px] flex flex-col p-0 border-none shadow-2xl overflow-hidden bg-white">
               {/* Terminal Tabs */}
-              <div className="p-8 border-b border-black/[0.03] bg-white flex justify-between items-center relative z-10 shadow-sm">
-                <div className="flex items-center gap-6">
+              <div className="p-4 md:p-8 border-b border-black/[0.03] bg-white flex flex-col sm:flex-row justify-between items-center relative z-10 shadow-sm gap-4">
+                <div className="flex items-center gap-4 md:gap-6 overflow-x-auto w-full sm:w-auto no-scrollbar">
                   <div className="flex items-center gap-3 px-4 py-2 bg-slate-50 rounded-xl border border-black/5">
                     <MessageSquare className="w-4 h-4 text-primary" />
                     <h3 className="text-[10px] font-black uppercase tracking-widest">Synthesis Thread</h3>
@@ -167,7 +167,7 @@ export default function ScholarPage() {
               {/* Streamed Conversation */}
               <div
                 ref={scrollRef}
-                className="flex-1 overflow-y-auto p-12 space-y-16 scrollbar-hide bg-[#fdfbf6]/40 relative"
+                className="flex-1 overflow-y-auto p-4 md:p-12 space-y-12 md:space-y-16 scrollbar-hide bg-[#fdfbf6]/40 relative"
               >
                 <AnimatePresence mode="popLayout">
                   {conversation.map((msg, i) => (
@@ -178,8 +178,8 @@ export default function ScholarPage() {
                       className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
                       <div className={msg.role === 'user'
-                        ? "max-w-[70%] bg-primary text-white p-8 rounded-[2rem] rounded-tr-sm shadow-2xl shadow-black/20"
-                        : "max-w-[85%] space-y-6"}>
+                        ? "max-w-[85%] md:max-w-[70%] bg-primary text-white p-5 md:p-8 rounded-[2rem] rounded-tr-sm shadow-2xl shadow-black/20"
+                        : "max-w-[95%] md:max-w-[85%] space-y-4 md:space-y-6"}>
 
                         {msg.role === 'assistant' && (
                           <div className="flex items-center gap-3 text-primary">
@@ -227,26 +227,26 @@ export default function ScholarPage() {
                 </div>
               </div>
 
-              {/* Command input */}
-              <div className="p-10 bg-white border-t border-black/[0.03] relative z-10 shadow-[0_-10px_50px_rgba(0,0,0,0.02)]">
-                <div className="relative flex items-center bg-slate-50 border border-black/[0.05] rounded-[2rem] p-3 focus-within:bg-white focus-within:border-black/10 focus-within:shadow-2xl transition-all duration-500">
-                  <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm border border-black/5 ml-1 shrink-0">
-                    <Search className="w-5 h-5 text-muted-foreground/40" />
-                  </div>
+              {/* Input Area */}
+              <div className="p-4 md:p-10 border-t border-black/[0.03] bg-white relative z-10 shadow-[0_-4px-20px_rgba(0,0,0,0.02)]">
+                <div className="relative group">
                   <input
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                    placeholder="Ask Aura to synthesize research threads..."
-                    className="flex-1 bg-transparent border-none outline-none py-4 px-6 text-base font-black placeholder:text-muted-foreground/20"
+                    onKeyDown={(e) => e.key === "Enter" && handleSend()}
+                    placeholder="Ask Scholar anything about your research..."
+                    className="w-full bg-slate-50 border border-black/5 rounded-[1.8rem] py-4 md:py-6 pl-6 md:pl-8 pr-24 md:pr-32 text-sm md:text-base font-black outline-none focus:ring-4 ring-primary/5 focus:bg-white focus:border-primary/20 transition-all shrink-0"
                   />
-                  <button
-                    onClick={handleSend}
-                    className="bg-primary text-white p-5 rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/20 group"
-                  >
-                    <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </button>
+                  <div className="absolute right-2 top-2 bottom-2">
+                    <button
+                      onClick={handleSend}
+                      disabled={isTyping}
+                      className="h-full px-6 md:px-10 bg-primary text-white rounded-[1.4rem] text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] shadow-xl shadow-black/20 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:scale-100"
+                    >
+                      {isTyping ? "..." : "Sync Query"}
+                    </button>
+                  </div>
                 </div>
               </div>
             </AuraCard>

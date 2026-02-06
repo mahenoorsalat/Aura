@@ -232,9 +232,9 @@ export function Sidebar() {
           </CommandList>
         </CommandDialog>
 
-        <div className="flex items-center gap-1 group">
+        <div className="hidden md:flex items-center gap-1 group">
           <button className="w-10 h-10 flex items-center justify-center rounded-2xl hover:bg-black/5 transition-all text-muted-foreground/60 hover:text-primary">
-            <HelpCircle className="w-5 h-5" />
+            <HelpCircle className="w-5 h-5 md:w-5 md:h-5" />
           </button>
 
           <Popover>
@@ -276,7 +276,7 @@ export function Sidebar() {
           </Link>
         </div>
 
-        <div className="w-[1px] h-6 bg-black/5 mx-2" />
+        <div className="hidden md:block w-[1px] h-6 bg-black/5 mx-2" />
 
         <div className="flex items-center gap-3 bg-white border border-black/5 rounded-2xl p-1.5 pr-4 pl-2 shadow-sm hover:shadow-md transition-all cursor-pointer group">
           <div className="w-8 h-8 rounded-xl bg-slate-100 flex items-center justify-center overflow-hidden border border-black/5 group-hover:ring-2 ring-primary/10 transition-all">

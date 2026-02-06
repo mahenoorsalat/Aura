@@ -102,7 +102,7 @@ export default function BalancePage() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
           {/* Main Atmosphere Visualizer */}
           <div className="lg:col-span-8">
-            <AuraCard span="full" className="h-[750px] flex flex-col items-center justify-center p-0 border-none shadow-[0_40px_100px_rgba(0,0,0,0.08)] overflow-hidden relative bg-white">
+            <AuraCard span="full" className="min-h-[700px] lg:h-[800px] flex flex-col items-center justify-between p-6 md:p-12 border-none shadow-[0_40px_100px_rgba(0,0,0,0.08)] overflow-hidden relative bg-white">
               <div className="absolute inset-0 bg-[#fdfbf6]/40 -z-10" />
 
               {/* Advanced Atmospheric Geometry */}
@@ -113,7 +113,7 @@ export default function BalancePage() {
                     rotate: [0, 180, 360]
                   } : { rotate: 360 }}
                   transition={isBreathing ? { duration: 8, repeat: Infinity, ease: "easeInOut" } : { duration: 60, repeat: Infinity, ease: "linear" }}
-                  className="w-[800px] h-[800px] border border-black/[0.03] rounded-[4rem]"
+                  className="w-[300px] h-[300px] md:w-[800px] md:h-[800px] border border-black/[0.03] rounded-[4rem]"
                 />
                 <motion.div
                   animate={isBreathing ? {
@@ -121,11 +121,11 @@ export default function BalancePage() {
                     rotate: [360, 180, 0]
                   } : { rotate: -360 }}
                   transition={isBreathing ? { duration: 12, repeat: Infinity, ease: "easeInOut" } : { duration: 90, repeat: Infinity, ease: "linear" }}
-                  className="absolute w-[600px] h-[600px] border border-black/[0.05] rounded-[6rem] border-dashed"
+                  className="absolute w-[200px] h-[200px] md:w-[600px] md:h-[600px] border border-black/[0.05] rounded-[6rem] border-dashed"
                 />
               </div>
 
-              <div className="relative z-10 flex flex-col items-center gap-20">
+              <div className="relative z-10 flex flex-col items-center gap-12 md:gap-20">
                 <div className="relative">
                   <div className="w-64 h-64 rounded-full border border-black/5 flex items-center justify-center bg-white shadow-2xl transition-all duration-1000">
                     <motion.div
@@ -144,20 +144,20 @@ export default function BalancePage() {
                   <div className="absolute -inset-24 border border-black/[0.01] rounded-full -z-10 animate-[ping_8s_linear_infinite]" />
                 </div>
 
-                <div className="text-center space-y-4">
+                <div className="text-center space-y-2 md:space-y-4">
                   <AnimatePresence mode="wait">
                     <motion.h3
                       key={isBreathing ? breathPhase : "Ready"}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="text-4xl font-black text-primary tracking-tighter"
+                      className="text-2xl md:text-4xl font-black text-primary tracking-tighter"
                     >
                       {isBreathing ? breathPhase : "Pulse Breath"}
                     </motion.h3>
                   </AnimatePresence>
                   <div className="flex items-center justify-center gap-4">
-                    <div className="w-40 h-1 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="w-32 md:w-40 h-1 bg-slate-100 rounded-full overflow-hidden">
                       <motion.div
                         animate={isBreathing ? { x: ["-100%", "0%", "-100%"] } : { x: "-100%" }}
                         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -171,40 +171,40 @@ export default function BalancePage() {
                 <div className="flex gap-4">
                   <button
                     onClick={() => setIsBreathing(!isBreathing)}
-                    className={`${isBreathing ? 'bg-primary text-white' : 'bg-primary text-white'} px-12 py-6 rounded-full text-[11px] font-black uppercase tracking-[0.25em] hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-black/20 flex items-center gap-6 group`}
+                    className={`${isBreathing ? 'bg-primary text-white' : 'bg-primary text-white'} px-8 md:px-12 py-4 md:py-6 rounded-full text-[10px] md:text-[11px] font-black uppercase tracking-[0.25em] hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-black/20 flex items-center gap-4 md:gap-6 group`}
                   >
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary group-hover:bg-secondary transition-colors">
-                      {isBreathing ? <RotateCcw className="w-4 h-4" /> : <Play className="w-4 h-4 fill-primary ml-1" />}
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white flex items-center justify-center text-primary group-hover:bg-secondary transition-colors">
+                      {isBreathing ? <RotateCcw className="w-3 h-3 md:w-4 md:h-4" /> : <Play className="w-3 h-3 md:w-4 md:h-4 fill-primary ml-1" />}
                     </div>
-                    {isBreathing ? "Terminate Session" : "Initiate Reset Session"}
+                    {isBreathing ? "Terminate" : "Initiate Reset"}
                   </button>
                 </div>
               </div>
 
               {/* Environmental Dashboard */}
-              <div className="absolute bottom-12 left-12 right-12 flex justify-between items-end border-t border-black/[0.03] pt-12">
-                <div className="flex gap-20">
-                  <div className="group cursor-default">
-                    <div className="flex items-center gap-2 mb-2">
+              <div className="w-full mt-12 lg:mt-0 pt-8 border-t border-black/[0.03] flex flex-col lg:flex-row justify-between items-center gap-8 relative z-20">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-8 md:gap-16">
+                  <div className="group cursor-default text-center lg:text-left">
+                    <div className="flex items-center justify-center lg:justify-start gap-2 mb-1 md:mb-2">
                       <Wind className="w-3.5 h-3.5 text-muted-foreground/30" />
-                      <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/40">Atmospheric pressure</p>
+                      <p className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/40">Atmospheric pressure</p>
                     </div>
-                    <p className="text-3xl font-black text-primary tracking-tighter group-hover:text-secondary transition-colors">1.02 ATM</p>
+                    <p className="text-2xl md:text-3xl font-black text-primary tracking-tighter group-hover:text-secondary transition-colors">1.02 ATM</p>
                   </div>
-                  <div className="group cursor-default">
-                    <div className="flex items-center gap-2 mb-2">
+                  <div className="group cursor-default text-center lg:text-left">
+                    <div className="flex items-center justify-center lg:justify-start gap-2 mb-1 md:mb-2">
                       <Activity className="w-3.5 h-3.5 text-muted-foreground/30" />
-                      <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/40">Cognitive load</p>
+                      <p className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/40">Cognitive load</p>
                     </div>
-                    <p className="text-3xl font-black text-primary tracking-tighter group-hover:text-emerald-500 transition-colors">12.4%</p>
+                    <p className="text-2xl md:text-3xl font-black text-primary tracking-tighter group-hover:text-emerald-500 transition-colors">12.4%</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <div className="bg-primary text-white px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-black/20 mb-4 inline-flex items-center gap-3">
+                <div className="text-center lg:text-right">
+                  <div className="bg-primary text-white px-5 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest shadow-xl shadow-black/20 mb-3 inline-flex items-center gap-2">
                     <Zap className="w-3 h-3 text-secondary fill-secondary" />
                     12 Day Synergy Streak
                   </div>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground/20 italic">Nexus stability verified</p>
+                  <p className="text-[9px] font-black uppercase tracking-widest text-muted-foreground/20 italic block">Nexus stability verified</p>
                 </div>
               </div>
             </AuraCard>

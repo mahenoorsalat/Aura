@@ -10,11 +10,11 @@ interface AuraCardProps {
 
 const AuraCard: React.FC<AuraCardProps> = ({ children, className, span = 'medium', onClick }) => {
     const spanClasses = {
-        small: 'col-span-3',
-        medium: 'col-span-4',
-        large: 'col-span-8',
-        tall: 'col-span-3 row-span-2',
-        wide: 'col-span-6',
+        small: 'col-span-12 md:col-span-3',
+        medium: 'col-span-12 md:col-span-4',
+        large: 'col-span-12 md:col-span-8',
+        tall: 'col-span-12 md:col-span-3 row-span-1 md:row-span-2',
+        wide: 'col-span-12 md:col-span-6',
         full: 'col-span-12',
     };
 

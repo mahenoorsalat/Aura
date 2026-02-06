@@ -98,29 +98,29 @@ export default function VillagePage() {
                 <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
                 <span className="text-[10px] font-black uppercase tracking-widest">Premium Synergy</span>
               </div>
-              <p className="text-xs font-bold leading-relaxed text-muted-foreground">Matches are calculated based on academic latency, project history, and identity alignment weights.</p>
+              <p className="text-xs font-bold leading-relaxed text-muted-foreground p-6 md:p-10">Matches are calculated based on academic latency, project history, and identity alignment weights.</p>
             </AuraCard>
           </div>
 
           {/* Peer Discovery main list */}
           <div className="lg:col-span-9 space-y-12">
             {/* High-fidelity Search */}
-            <div className="bg-white border border-black/[0.03] p-3 rounded-[2rem] flex items-center gap-4 shadow-xl shadow-black/[0.02]">
-              <div className="w-14 h-14 bg-slate-50 rounded-2xl ml-1 flex items-center justify-center border border-black/5">
-                <Search className="w-6 h-6 text-slate-300" />
+            <div className="bg-white border border-black/[0.03] p-2 md:p-3 rounded-[2rem] flex items-center gap-2 md:gap-4 shadow-xl shadow-black/[0.02]">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 rounded-2xl ml-1 flex items-center justify-center border border-black/5 shrink-0">
+                <Search className="w-5 h-5 md:w-6 md:h-6 text-slate-300" />
               </div>
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Search the village for peers, skills, or shared academic goals..."
-                className="bg-transparent border-none outline-none text-base font-black flex-1 text-primary placeholder:text-muted-foreground/20 px-4"
+                placeholder="Search village..."
+                className="bg-transparent border-none outline-none text-sm md:text-base font-black flex-1 text-primary placeholder:text-muted-foreground/20 px-2 md:px-4 min-w-0"
               />
-              <div className="hidden sm:flex items-center gap-2 bg-slate-50 border border-black/5 px-4 py-2 rounded-xl mr-2 text-[10px] font-black uppercase tracking-widest text-muted-foreground/40">
+              <div className="hidden lg:flex items-center gap-2 bg-slate-50 border border-black/5 px-4 py-2 rounded-xl mr-2 text-[10px] font-black uppercase tracking-widest text-muted-foreground/40 shrink-0">
                 <Command className="w-3 h-3" />
                 <span>S</span>
               </div>
-              <button className="px-6 md:px-10 py-3 md:py-4 bg-primary text-white rounded-[1.4rem] text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] shadow-xl shadow-black/20 hover:scale-[1.02] active:scale-[0.98] transition-all mr-1">Search</button>
+              <button className="px-6 md:px-10 py-3 md:py-4 bg-primary text-white rounded-[1.4rem] text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] shadow-xl shadow-black/20 hover:scale-[1.02] active:scale-[0.98] transition-all mr-1 shrink-0">Search</button>
             </div>
 
             {/* Diversity Grid */}
@@ -161,20 +161,17 @@ export default function VillagePage() {
                         </div>
                       </div>
 
-                      <div className="p-10 space-y-8">
-                        <div>
-                          <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-3xl font-black text-primary leading-none">{peer.name}</h3>
-                            <UserCheck className="w-5 h-5 text-emerald-500" />
+                      <div className="p-6 md:p-8 space-y-8">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                          <div>
+                            <h4 className="text-xl font-black tracking-tight">{peer.name}</h4>
+                            <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest mt-1">{peer.role}</p>
                           </div>
-                          <p className="text-base text-muted-foreground font-medium leading-relaxed">{peer.bio}</p>
+                          <button className="w-full sm:w-auto px-6 py-3 bg-slate-50 hover:bg-primary hover:text-white border border-black/5 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all">Connect Peer</button>
                         </div>
-
-                        <div className="flex flex-wrap gap-2 pt-2">
+                        <div className="flex flex-wrap gap-2">
                           {peer.tags.map(tag => (
-                            <span key={tag} className="text-[9px] font-black uppercase tracking-widest bg-slate-50 text-slate-500 px-4 py-2 rounded-xl border border-black/5">
-                              {tag}
-                            </span>
+                            <span key={tag} className="px-3 py-1.5 bg-black/[0.02] border border-black/5 rounded-xl text-[9px] font-black uppercase tracking-widest text-muted-foreground/60">{tag}</span>
                           ))}
                         </div>
 

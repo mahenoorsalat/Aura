@@ -82,7 +82,7 @@ export default function NourishPage() {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
           {/* Financials & Inventory Rail */}
           <div className="lg:col-span-4 space-y-12">
-            <AuraCard span="full" className="p-12 border-none shadow-2xl relative group overflow-hidden">
+            <AuraCard span="full" className="p-6 md:p-12 border-none shadow-2xl relative group overflow-hidden">
               <div className="flex items-center justify-between mb-16">
                 <span className="section-label mb-0">Financial Statement</span>
                 <button className="w-10 h-10 flex items-center justify-center bg-slate-50 rounded-xl border border-black/5 group-hover:bg-primary group-hover:text-white transition-all">
@@ -171,9 +171,21 @@ export default function NourishPage() {
 
           {/* Synthesis Scheduler Main Area */}
           <div className="lg:col-span-8">
-            <AuraCard span="full" className="h-[500px] lg:h-[800px] flex flex-col p-0 border-none shadow-2xl overflow-hidden bg-white">
-              <div className="p-10 border-b border-black/[0.03] bg-white flex flex-col sm:flex-row justify-between items-center gap-8 relative z-10 shadow-sm">
-                <div className="flex items-center gap-5">
+            <AuraCard span="full" className="h-auto lg:h-[800px] flex flex-col p-0 border-none shadow-2xl overflow-hidden bg-white">
+              <div className="p-6 md:p-12 border-b border-black/[0.03] bg-slate-50/50">
+                <span className="section-label mb-8 block">Projected Identity Alignment</span>
+                <div className="flex flex-col sm:flex-row items-center gap-8">
+                  <div className="w-24 h-24 rounded-full border-8 border-primary border-t-amber-400 flex items-center justify-center shrink-0">
+                    <span className="text-xl font-black text-primary">94%</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-black text-primary leading-tight mb-2">High resonance detected.</p>
+                    <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest leading-relaxed text-balance">Identity weights are shifting towards "Executive Stability" based on meal consistency.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 md:p-10 border-b border-black/[0.03] bg-white flex flex-col sm:flex-row justify-between items-center gap-8 relative z-10 shadow-sm">
+                <div className="flex items-center gap-5 overflow-x-auto w-full sm:w-auto">
                   <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-black/5 flex items-center justify-center shadow-sm">
                     <Calendar className="w-6 h-6 text-primary" />
                   </div>
@@ -188,7 +200,7 @@ export default function NourishPage() {
                 </button>
               </div>
 
-              <div className="flex-1 bg-[#fdfbf6]/40 p-10 lg:p-16">
+              <div className="flex-1 bg-[#fdfbf6]/40 p-6 md:p-10 lg:p-16">
                 <div className="flex gap-3 mb-16 overflow-x-auto scrollbar-hide pb-4">
                   {daysOfWeek.map(day => (
                     <button
@@ -207,7 +219,7 @@ export default function NourishPage() {
                     <motion.div
                       key={i}
                       whileHover={{ y: -8 }}
-                      className="p-10 rounded-[2.5rem] bg-white border border-black/[0.03] shadow-lg hover:shadow-2xl transition-all cursor-pointer space-y-12 flex flex-col justify-between group"
+                      className="p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-white border border-black/[0.03] shadow-lg hover:shadow-2xl transition-all cursor-pointer space-y-8 md:space-y-12 flex flex-col justify-between group"
                     >
                       <div>
                         <div className="flex justify-between items-center mb-8">
@@ -232,21 +244,21 @@ export default function NourishPage() {
 
                 {/* Consensus Block */}
                 <div className="p-12 bg-primary rounded-[3rem] text-white flex flex-col lg:flex-row justify-between lg:items-center gap-10 relative overflow-hidden group shadow-2xl shadow-black/30">
-                  <div className="relative z-10 flex items-center gap-8">
-                    <div className="w-20 h-20 rounded-[2rem] bg-secondary flex items-center justify-center shadow-2xl">
-                      <Zap className="w-10 h-10 text-primary fill-primary" />
+                  <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-[1.5rem] md:rounded-[2rem] bg-secondary flex items-center justify-center shadow-2xl shrink-0">
+                      <Zap className="w-8 h-8 md:w-10 md:h-10 text-primary fill-primary" />
                     </div>
                     <div>
                       <p className="text-[11px] font-black text-white/40 uppercase tracking-[0.2em] mb-3">Daily Efficiency Protocol</p>
-                      <p className="text-5xl font-black tracking-tighter leading-none">${(3.60).toFixed(2)} TOTAL COST</p>
+                      <p className="text-3xl md:text-5xl font-black tracking-tighter leading-none">${(3.60).toFixed(2)} TOTAL COST</p>
                     </div>
                   </div>
-                  <div className="relative z-10 flex flex-col items-end gap-3 text-right">
+                  <div className="relative z-10 flex flex-col items-center md:items-end gap-3 text-center md:text-right">
                     <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full">
                       <CheckCircle2 className="w-4 h-4 text-secondary" />
                       <span className="text-[11px] font-black uppercase tracking-widest">3.2k Calories Synthesized</span>
                     </div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/20 mr-2 leading-none mt-2 italic">Nexus verified nutrition stack</p>
+                    <p className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-white/20 mr-2 leading-none mt-2 italic">Nexus verified nutrition stack</p>
                   </div>
 
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 blur-[120px] pointer-events-none rounded-full" />
