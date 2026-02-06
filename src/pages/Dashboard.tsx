@@ -92,7 +92,7 @@ const Dashboard = () => {
 
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-12">
             <div>
-              <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 max-w-4xl leading-[0.9]">
+              <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-4 max-w-4xl leading-[0.9]">
                 Welcome back, <br />
                 <span className="text-primary italic">{userName}.</span>
               </h1>

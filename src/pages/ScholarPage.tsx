@@ -84,7 +84,7 @@ export default function ScholarPage() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
-              <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-primary leading-none mb-4">Research Lab.</h1>
+              <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-primary leading-none mb-4">Research Lab.</h1>
               <p className="text-xl text-muted-foreground font-medium max-w-xl">Deep processing of academic data via the Nexos Core.</p>
             </div>
             <div className="flex items-center gap-4 bg-white p-2 rounded-3xl border border-black/5 shadow-sm">
@@ -144,7 +144,7 @@ export default function ScholarPage() {
 
           {/* Main Terminal interface */}
           <div className="lg:col-span-8">
-            <AuraCard span="full" className="h-[800px] flex flex-col p-0 border-none shadow-2xl overflow-hidden bg-white">
+            <AuraCard span="full" className="h-[500px] lg:h-[800px] flex flex-col p-0 border-none shadow-2xl overflow-hidden bg-white">
               {/* Terminal Tabs */}
               <div className="p-8 border-b border-black/[0.03] bg-white flex justify-between items-center relative z-10 shadow-sm">
                 <div className="flex items-center gap-6">

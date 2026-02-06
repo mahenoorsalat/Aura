@@ -12,9 +12,15 @@ import {
   Brain,
   Users,
   Utensils,
-  Wind
+  Wind,
+  Menu
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import {
   Popover,
   PopoverContent,
@@ -93,7 +99,75 @@ export function Sidebar() {
         </div>
       </Link>
 
-      {/* Navigation Pills */}
+      {/* Mobile Nav Trigger */}
+      <div className="flex lg:hidden items-center gap-2">
+        <Sheet>
+          <SheetTrigger asChild>
+            <button className="w-10 h-10 flex items-center justify-center rounded-2xl hover:bg-black/5 transition-all text-muted-foreground/60 hover:text-primary">
+              <Menu className="w-6 h-6" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-[300px] aura-slab border-none p-0 flex flex-col">
+            <div className="p-8 border-b border-black/[0.03] bg-white">
+              <Link to="/" className="flex items-center gap-3 group">
+                <div className="w-10 h-10 border border-black/5 rounded-2xl flex items-center justify-center bg-white shadow-sm ring-1 ring-black/5 p-1.5">
+                  <img src="/logo.svg" alt="Aura Logo" className="w-full h-full object-contain" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-lg font-black tracking-tighter leading-none">Aura</span>
+                  <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/40 leading-none mt-1">Mobile Sync</span>
+                </div>
+              </Link>
+            </div>
+
+            <div className="flex-1 p-6 space-y-2 overflow-y-auto bg-slate-50/30">
+              <span className="section-label px-2">Navigation</span>
+              {navItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={cn(
+                      "flex items-center gap-4 px-4 py-4 rounded-3xl transition-all group",
+                      isActive
+                        ? "bg-primary text-white shadow-xl shadow-black/10"
+                        : "hover:bg-white border border-transparent hover:border-black/5 text-muted-foreground hover:text-primary"
+                    )}
+                  >
+                    <item.icon className={cn("w-5 h-5", isActive ? "text-white" : "text-muted-foreground/60 group-hover:text-primary")} />
+                    <span className="text-sm font-black uppercase tracking-widest">{item.label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+
+            <div className="p-6 bg-white border-t border-black/[0.03] space-y-4">
+              <div className="flex items-center gap-3 mb-6 px-2">
+                <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center overflow-hidden border border-black/5">
+                  <img src={`https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=000&color=fff`} alt="User" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xs font-black uppercase">{user.name}</span>
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase">{user.major}</span>
+                </div>
+              </div>
+              <button
+                onClick={() => navigate('/settings')}
+                className="w-full py-4 px-6 rounded-2xl bg-black/[0.03] flex items-center justify-between group hover:bg-black/[0.05] transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <Settings className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Settings</span>
+                </div>
+                <Sparkles className="w-3 h-3 text-amber-400 opacity-0 group-hover:opacity-100 transition-all" />
+              </button>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
+
+      {/* Navigation Pills (Desktop) */}
       <div className="hidden lg:flex nav-header shadow-md group">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;

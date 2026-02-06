@@ -57,7 +57,7 @@ export default function NourishPage() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div>
-              <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-primary leading-none mb-4">Nourish.</h1>
+              <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-primary leading-none mb-4">Research Lab.</h1>
               <p className="text-xl text-muted-foreground font-medium max-w-xl">Optimizing nutritional intake and budgetary thresholds via the nexus.</p>
             </div>
 
@@ -93,8 +93,8 @@ export default function NourishPage() {
               <div className="space-y-12 relative z-10">
                 <div>
                   <p className="section-label mb-4 opacity-40">Dynamic Weekly Threshold</p>
-                  <div className="flex items-baseline justify-between mb-10">
-                    <span className="text-7xl font-black tracking-tighter text-primary">${budget}</span>
+                  <div className="flex items-baseline justify-between mb-10 overflow-hidden">
+                    <span className="text-5xl md:text-7xl font-black tracking-tighter text-primary">${budget}</span>
                     <div className="flex items-center gap-2 text-emerald-500 font-black text-xs uppercase bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
                       <TrendingUp className="w-3.5 h-3.5" />
                       Optimal
@@ -127,6 +127,21 @@ export default function NourishPage() {
                 </div>
               </div>
 
+              <div className="md:col-span-12 xl:col-span-4 space-y-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
+                  <span className="section-label mb-0">Quick Inventory</span>
+                </div>
+                <div className="space-y-3">
+                  {["Oatmeal (Sync)", "Almond Milk", "Blueberries"].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-4 bg-white border border-black/[0.03] rounded-2xl">
+                      <span className="text-xs font-black uppercase tracking-widest">{item}</span>
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Background abstract decoration */}
               <div className="absolute top-[-100px] left-[-100px] w-64 h-64 bg-slate-50 rounded-full blur-[100px] pointer-events-none" />
             </AuraCard>
@@ -156,7 +171,7 @@ export default function NourishPage() {
 
           {/* Synthesis Scheduler Main Area */}
           <div className="lg:col-span-8">
-            <AuraCard span="full" className="p-0 border-none shadow-2xl overflow-hidden min-h-[800px] flex flex-col bg-white">
+            <AuraCard span="full" className="h-[500px] lg:h-[800px] flex flex-col p-0 border-none shadow-2xl overflow-hidden bg-white">
               <div className="p-10 border-b border-black/[0.03] bg-white flex flex-col sm:flex-row justify-between items-center gap-8 relative z-10 shadow-sm">
                 <div className="flex items-center gap-5">
                   <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-black/5 flex items-center justify-center shadow-sm">

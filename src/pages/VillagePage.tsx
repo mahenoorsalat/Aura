@@ -57,7 +57,7 @@ export default function VillagePage() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div>
-              <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-primary leading-none mb-4">The Village.</h1>
+              <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-primary leading-none mb-4">The Village.</h1>
               <p className="text-xl text-muted-foreground font-medium max-w-xl">Curated peer matching for high-impact academic collaboration.</p>
             </div>
             <div className="flex -space-x-3 mb-2">
@@ -120,7 +120,7 @@ export default function VillagePage() {
                 <Command className="w-3 h-3" />
                 <span>S</span>
               </div>
-              <button className="px-10 py-4 bg-primary text-white rounded-[1.4rem] text-[11px] font-black uppercase tracking-[0.2em] shadow-xl shadow-black/20 hover:scale-[1.02] active:scale-[0.98] transition-all mr-1">Search</button>
+              <button className="px-6 md:px-10 py-3 md:py-4 bg-primary text-white rounded-[1.4rem] text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] shadow-xl shadow-black/20 hover:scale-[1.02] active:scale-[0.98] transition-all mr-1">Search</button>
             </div>
 
             {/* Diversity Grid */}

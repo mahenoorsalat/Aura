@@ -77,7 +77,7 @@ export default function BalancePage() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
             <div>
-              <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-primary leading-none mb-4">Resilience.</h1>
+              <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-primary leading-none mb-4">Resilience.</h1>
               <p className="text-xl text-muted-foreground font-medium max-w-xl">Systemic homeostasis and cognitive reset via atmospheric synchronization.</p>
             </div>
 
